@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zann Cpanel - Jual Panel Berkualitas</title>
+    <style>
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #1e272e;
+            --darker: #0f1519;
+            --light: #f5f6fa;
+            --success: #00b894;
+            --whatsapp: #25D366;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(30, 39, 46, 0.9), rgba(30, 39, 46, 0.9)), 
+                        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .products {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: var(--darker);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-header {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .product-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .product-price {
+            font-size: 28px;
+            font-weight: 800;
+        }
+        
+        .product-body {
+            padding: 20px;
+        }
+        
+        .product-benefits {
+            list-style-type: none;
+        }
+        
+        .product-benefits li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .product-benefits li::before {
+            content: '✓';
+            color: var(--success);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .product-footer {
+            padding: 0 20px 20px;
+            text-align: center;
+        }
+        
+        .order-btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .order-btn:hover {
+            background: var(--secondary);
+        }
+        
+        .specs {
+            background: var(--darker);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 14px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        footer {
+            background: var(--darker);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Zann <span>Cpanel</span></a>
+            <a href="https://wa.me/62895811339131" class="whatsapp-btn">Hubungi Kami</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Panel Berkualitas dengan Harga Terbaik</h1>
+            <p>Dapatkan panel premium dengan kecepatan tinggi dan garansi kualitas. Transaksi aman dan terpercaya.</p>
+            <a href="https://wa.me/62895811339131" class="whatsapp-btn">Pesan Sekarang via WhatsApp</a>
+        </div>
+    </section>
+    
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Produk Kami</h2>
+            
+            <div class="product-grid">
+                <!-- Produk 1 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3 class="product-title">TANGAN KANAN PANEL</h3>
+                        <div class="product-price">25K</div>
+                    </div>
+                    <div class="product-body">
+                        <ul class="product-benefits">
+                            <li>BISA OPEN TANGAN KANAN DAN DI BAWAH NYA</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/62895811339131?text=Saya%20mau%20pesan%20TANGAN%20KANAN%20PANEL%2025K" class="order-btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 2 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3 class="product-title">TANGAN KIRI PANEL</h3>
+                        <div class="product-price">20K</div>
+                    </div>
+                    <div class="product-body">
+                        <ul class="product-benefits">
+                            <li>BISA OPEN OWN DAN DI BAWAH NYA</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/62895811339131?text=Saya%20mau%20pesan%20TANGAN%20KIRI%20PANEL%2020K" class="order-btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 3 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3 class="product-title">OWNER PANEL</h3>
+                        <div class="product-price">15K</div>
+                    </div>
+                    <div class="product-body">
+                        <ul class="product-benefits">
+                            <li>BISA OPEN PT DAN DI BAWAH NYA</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/62895811339131?text=Saya%20mau%20pesan%20OWNER%20PANEL%2015K" class="order-btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 4 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3 class="product-title">PT PANEL</h3>
+                        <div class="product-price">10K</div>
+                    </div>
+                    <div class="product-body">
+                        <ul class="product-benefits">
+                            <li>BISA OPEN ADP DAN DI BAWAH NYA</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/62895811339131?text=Saya%20mau%20pesan%20PT%20PANEL%2010K" class="order-btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 5 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3 class="product-title">ADP PANEL</h3>
+                        <div class="product-price">8K</div>
+                    </div>
+                    <div class="product-body">
+                        <ul class="product-benefits">
+                            <li>BISA OPEN RES</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/62895811339131?text=Saya%20mau%20pesan%20ADP%20PANEL%208K" class="order-btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 6 -->
+                <div class="product-card">
+                    <div class="product-header">
+                        <h3 class="product-title">RESS PANEL</h3>
+                        <div class="product-price">5K</div>
+                    </div>
+                    <div class="product-body">
+                        <ul class="product-benefits">
+                            <li>BISA JUAL PANEL</li>
+                        </ul>
+                        <div class="specs">
+                            <p>SPEK R32C8</p>
+                            <p>NO PT PT</p>
+                            <p>ANTI INTIP</p>
+                            <p>DIJAMIN KENCENG</p>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <a href="https://wa.me/62895811339131?text=Saya%20mau%20pesan%20RESS%20PANEL%205K" class="order-btn">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Zann Cpanel. All Rights Reserved.</p>
+            <div class="contact-info">
+                <p>Minat PM/PV: <a href="https://wa.me/62895811339131">0895811339131</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
